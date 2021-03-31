@@ -23,8 +23,7 @@ if (queryParams.vasturl) {
 }
 
 var options = {
-	id: 'content_video',
-	adTagUrl: vastURL
+	id: 'content_video'
 };
 
 player.ima(options)
@@ -44,6 +43,7 @@ if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) |
 }
 
 player.one(startEvent, function() {
+	player.ima.setContentWithAdTag(null, vastURL, false);
 	player.ima.initializeAdDisplayContainer()
 	player.ima.requestAds()
 	player.play()
