@@ -39,15 +39,12 @@ if ((navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i)
 // first time it's clicked.
 var startEvent = 'click';
 if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i)) {
-	startEvent = 'tap'
-	player.ima.setContentWithAdTag(null, vastURL, false);
+	startEvent = 'touchend'
 }
 
 player.one(startEvent, function() {
-	if (startEvent === 'click') {
-		player.ima.setContentWithAdTag(null, vastURL, false);
-	}
 	player.ima.initializeAdDisplayContainer()
+	player.ima.setContentWithAdTag(null, vastURL, false);
 	player.ima.requestAds()
 	player.play()
 });
