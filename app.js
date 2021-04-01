@@ -22,8 +22,22 @@ if (queryParams.vasturl) {
 	vastURL = queryParams.vasturl
 }
 
+var adsManagerLoadedCallback = function () {
+	var keys = Object.keys(google.ima.AdEvent.Type)
+	var eventNames = []
+	keys.forEach(function(k) {
+		var eventName = google.ima.AdEvent.Type[k]
+		eventNames.push(eventName)
+		player.ima.addEventListener(eventName, function(evt) {
+			console.log(eventName, evt)
+		})
+	})
+	console.log('Registered IMA Events', eventNames)
+}
+
 var options = {
-	id: 'content_video'
+	id: 'content_video',
+	adsManagerLoadedCallback: adsManagerLoadedCallback
 };
 
 player.ima(options)
