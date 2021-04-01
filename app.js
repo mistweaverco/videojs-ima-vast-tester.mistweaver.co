@@ -27,7 +27,6 @@ var options = {
 };
 
 player.ima(options)
-player.ima.setContentWithAdTag(null, vastURL, false);
 
 // Remove controls from the player on iPad to stop native controls from stealing
 // our click
@@ -41,9 +40,13 @@ if ((navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i)
 var startEvent = 'click';
 if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/Android/i)) {
 	startEvent = 'tap'
+	player.ima.setContentWithAdTag(null, vastURL, false);
 }
 
 player.one(startEvent, function() {
+	if (startEvent === 'click') {
+		player.ima.setContentWithAdTag(null, vastURL, false);
+	}
 	player.ima.initializeAdDisplayContainer()
 	player.ima.requestAds()
 	player.play()
