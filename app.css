@@ -27,6 +27,7 @@ input[type=url] {
 	display: block;
 	padding: 5px;
 	border: 1px solid #000;
+	border-radius: 4px;
 }
 
 input[type=submit] {
