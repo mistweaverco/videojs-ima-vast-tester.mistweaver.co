@@ -32,6 +32,14 @@ var adsManagerLoadedCallback = function () {
 			console.log(eventName, evt)
 		})
 	})
+	keys = Object.keys(google.ima.AdError.Type)
+	keys.forEach(function(k) {
+		var eventName = google.ima.AdError.Type[k]
+		eventNames.push(eventName)
+		player.ima.addEventListener(eventName, function(evt) {
+			console.log(eventName, evt)
+		})
+	})
 	console.log('Registered IMA Events', eventNames)
 }
 
@@ -62,3 +70,8 @@ player.one(startEvent, function() {
 	player.ima.requestAds()
 	player.play()
 });
+
+document.getElementById('reload_btn').addEventListener('click', function (evt) {
+	evt.preventDefault()
+	window.location.reload()
+})

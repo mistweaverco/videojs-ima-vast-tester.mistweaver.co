@@ -30,6 +30,17 @@ input[type=url] {
 	border-radius: 4px;
 }
 
+#reload_btn {
+        background-color: #a9d300;
+	border: 1px solid #a9d300;
+        border-radius: 16px;
+        box-shadow: 2px 2px 2px 0 rgb(0 0 0 / 20%);
+        margin-bottom: 24px;
+        padding: 8px 32px;
+	color: #fff;
+	font-weight: bold;
+}
+
 input[type=submit] {
         background-color: #0079d3;
 	border: 1px solid #0079d3;
