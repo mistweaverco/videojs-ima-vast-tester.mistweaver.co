@@ -9,12 +9,12 @@ if (locSearch.length > 0) {
 	queryParamString = locSearch.substring(1)
 }
 
-queryParamString.split("&").forEach(function(keyvalPairString) {
+queryParamString.split("&").forEach(function (keyvalPairString) {
 	var keyvalPair = keyvalPairString.split('=')
-	queryParams[keyvalPair[0]] = decodeURIComponent(keyvalPair[1])
+	if (keyvalPair[0].length) {
+		queryParams[keyvalPair[0]] = decodeURIComponent(keyvalPair[1])
+	}
 })
-
-console.log(queryParams)
 
 if (queryParams.vasturl) {
 	document.getElementById('input_vasturl').value = queryParams.vasturl
