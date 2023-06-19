@@ -41,14 +41,12 @@ var adsManagerLoadedCallback = function () {
 		})
 	})
 	console.log('Registered IMA Events', eventNames)
-
-	player.ima.setContentWithAdTag(null, vastURL, false);
-	player.ima.requestAds()
 }
 
 var options = {
 	id: 'content_video',
-	adsManagerLoadedCallback: adsManagerLoadedCallback
+	adsManagerLoadedCallback: adsManagerLoadedCallback,
+  adTagUrl: vastURL,
 };
 
 player.ima(options)
