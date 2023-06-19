@@ -3,7 +3,7 @@ var player = videojs('content_video');
 var locSearch = window.location.search
 var queryParamString = ''
 var queryParams = {}
-var vastURL = 'https://vh.adscale.de/vah?sid=1d67e909-c4a9-4b70-9dd9-0942545a8067&ref=https://www.t-online.de/nachrichten/panorama/id_89591604/wetter-hier-schneit-es-am-wochenende-wieder-kraeftig.html&gdpr=1&gdpr_consent=CPAy22zPAy22zAGABBENBLCoAP_AAEfAAAYgHDld5D7NTWFCUfx5SttgGYgV1tQUA2QCCACBAyAFAAGQ8IQCg2ASsASAhAACAQIAohIBAABEHAEEAAAAAAAEAAAAAAUEgAAIIAIEABEBAAIQAAoKAAAAAAAAgEAACAQAmECQAubmBGAAAIAwAAAAAAAACBwQFYAqTQ1BQlHYaUhpQAiIAFaQFABgAggQgQIgBAABEOCEAhNAErAEAIAAAgECAKISAQAAQAAJBAAAAAAARAAAIAAFAIAACAACBBARAQAAEAAIAgAAAAAAAAAAAQAEAJAAEAEGZgBgAAAAIAAAAAAAAQEREAkAFQAXABDAD8AQ2Ai8BOwCkQF0BIAQARQGnBQC4ABgAFQAnACgAFgAMgAhQBGAEcAKQAVwBFgDRAHAAPIAhABJgCVgFZAM4Af0BCQCQQEtAMZCAAQAWhoBYAKgAuACGAH4AWkBDYCLwE7AKRAXQAxgMABANkMgEgAqACGAEwALgAjoB9gH4ARwBMQC8xgAIA2QCThUAsAFQAQwAmABcAEcAPwAjgBaQEggJiAXmOgBgBFAGGA04eAZAAMAAqAE4AUAAsABlAEYARwAmgBSACuAIsAUgA4AB5AEmAJXAS0BLgCcAFZAM4Af0BCQCSAEtAMZgY4Bjo4ACAC0hABAH2RAGAAsACaAFcARYApABwAErAJcATgArIBnAEtEwCgABoATgBQACwAIQARwAmgBSACoAFcAN4ApACVgEtAKyAX4AzgCEgEggL2AYyUgBAAiACKVALQAnACgAFgAMgAfABCgCMAI4ATQAqABXADeAHcARYApACVgEtAKyAZwBCQCSAEtAMZAZAAA.YAAAAAAAAAAA&bust=9386624044'
+var vastURL = 'https://mwcdn.co/vast-demos/creative-1of3.xml'
 
 if (locSearch.length > 0) {
 	queryParamString = locSearch.substring(1)
@@ -41,6 +41,9 @@ var adsManagerLoadedCallback = function () {
 		})
 	})
 	console.log('Registered IMA Events', eventNames)
+
+	player.ima.setContentWithAdTag(null, vastURL, false);
+	player.ima.requestAds()
 }
 
 var options = {
@@ -66,8 +69,6 @@ if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) |
 
 player.one(startEvent, function() {
 	player.ima.initializeAdDisplayContainer()
-	player.ima.setContentWithAdTag(null, vastURL, false);
-	player.ima.requestAds()
 	player.play()
 });
 
