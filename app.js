@@ -47,6 +47,10 @@ var options = {
 	id: 'content_video',
 	adsManagerLoadedCallback: adsManagerLoadedCallback,
   adTagUrl: vastURL,
+  omidVendorAccess: {
+    9: 'full',
+    1: 'full',
+  },
 };
 
 player.ima(options)
