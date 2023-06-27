@@ -47,6 +47,7 @@ var options = {
   id: 'content_video',
   adsManagerLoadedCallback: adsManagerLoadedCallback,
   adTagUrl: vastURL,
+  debug: true,
   omidVendorAccess: {
     9: 'full',
     1: 'full',
