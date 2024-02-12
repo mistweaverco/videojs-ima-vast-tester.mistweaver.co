@@ -2,9 +2,9 @@
 
 Test your VAST URLs with the following setup:
 
- - [Video.js v8.6.0][videojs]
- - [Video.js Contrib Ads v7.3.2][videojs-contrib-ads]
- - [Video.js IMA v2.1.0][videojs-ima]
+ - [Video.js v8.9.0][videojs]
+ - [Video.js Contrib Ads v7.3.4][videojs-contrib-ads]
+ - [Video.js IMA v2.3.0][videojs-ima]
  - [IMA SDK v3][ima-sdk]
 
 [videojs]: https://videojs.com/
